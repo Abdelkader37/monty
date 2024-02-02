@@ -60,7 +60,7 @@ void add_n(stack_t **stack, unsigned int line_number)
  */
 void sub_n(stack_t **stack, unsigned int line_number)
 {
-	int sum;
+	int s;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
@@ -68,8 +68,8 @@ void sub_n(stack_t **stack, unsigned int line_number)
 
 
 	(*stack) = (*stack)->next;
-	sum = (*stack)->n - (*stack)->prev->n;
-	(*stack)->n = sum;
+	s = (*stack)->n - (*stack)->prev->n;
+	(*stack)->n = s;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
@@ -82,7 +82,7 @@ void sub_n(stack_t **stack, unsigned int line_number)
  */
 void div_n(stack_t **stack, unsigned int line_number)
 {
-	int sum;
+	int s;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		print_errors(8, line_number, "div");
@@ -90,8 +90,8 @@ void div_n(stack_t **stack, unsigned int line_number)
 	if ((*stack)->n == 0)
 		print_errors(9, line_number);
 	(*stack) = (*stack)->next;
-	sum = (*stack)->n / (*stack)->prev->n;
-	(*stack)->n = sum;
+	s = (*stack)->n / (*stack)->prev->n;
+	(*stack)->n = s;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }

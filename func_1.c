@@ -84,7 +84,7 @@ int tokenizer(char *buffer, int n, int format)
 void fun_search(char *opcode, char *value, int ln, int format)
 {
 	int i;
-	int flag;
+	int f;
 
 	instruction_t func_list[] = {
 		{"push", stack_add},
@@ -108,15 +108,15 @@ void fun_search(char *opcode, char *value, int ln, int format)
 	if (opcode[0] == '#')
 		return;
 
-	for (flag = 1, i = 0; func_list[i].opcode != NULL; i++)
+	for (f = 1, i = 0; func_list[i].opcode != NULL; i++)
 	{
 		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{
 			fun_caller(func_list[i].f, opcode, value, ln, format);
-			flag = 0;
+			f = 0;
 		}
 	}
-	if (flag == 1)
+	if (f == 1)
 		print_err(3, ln, opcode);
 }
 
