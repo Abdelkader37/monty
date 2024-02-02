@@ -1,4 +1,5 @@
 #include "monty.h"
+
 stack_t *head = NULL;
 
 /**
@@ -21,7 +22,7 @@ int main(int argc, char *argv[])
 }
 
 /**
- * create_no -Creates a node.
+ * create_n -Creates a node.
  * @n: Number to go inside the node.
  * Return: Upon sucess a pointer to the node. Otherwise NULL.
  */
@@ -58,7 +59,7 @@ void free_n(void)
 
 
 /**
- * ue_add - Adds a node to the queue.
+ * que_add - Adds a node to the queue.
  * @new_node: Pointer to the new node.
  * @ln: line number of the opcode.
  */
